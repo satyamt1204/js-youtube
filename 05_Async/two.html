@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style= "background-color: #212121; color: white;">
+    <h1>Chai aur Code</h1>
+    <button id = "start">Start</button>
+    <button id = "stop">Stop</button>
+</body>
+<script>
+    const sayDate = function(str){
+        console.log(str, Date.now().toLocaleString());
+    }
+    let timer = 0;
+    let startTimer;
+    document.querySelector('#start').addEventListener('click', function(e){
+        if(timer ===0) startTimer = setInterval(sayDate, 1000, "Satyam");
+        timer = 1;
+    })
+    
+    const stopTImer = document.querySelector('#stop').addEventListener('click', function(e){
+        clearInterval(startTimer);
+        console.log("stopped")
+        timer = 0;
+    })
+    
+</script>
+</html>

@@ -85,3 +85,51 @@ form.addEventListener('submit', function (e) {
 
 
 ```
+
+##Project 5
+
+```javascript
+const insert = document.querySelector('#insert');
+const res = document.createElement('div');
+
+window.addEventListener('keydown', function (e) {
+  res.innerHTML = `
+  <div class = 'color'>
+  <table>
+  <tr>
+    <th>Key</th>
+    <th>Key Code</th>
+    <th>Code</th>
+  </tr>
+  <tr>
+    <td>${e.key === " " ? "Space" : e.key}</td>
+    <td>${e.keyCode}</td>
+    <td>${e.code}</td>
+  </tr>
+</table>
+</div>
+  `;
+  insert.appendChild(res);
+});
+```
+
+##Project 6
+
+```javascript
+const changeColor = function (str) {
+  let rand = Math.round(Math.random() * 16777215);
+  document.body.style.backgroundColor = '#' + rand.toString(16);
+};
+let timer = 0;
+document.querySelector('#start').addEventListener('click', function (e) {
+  if (timer === 0) startTimer = setInterval(changeColor, 1000);
+  timer = 1;
+});
+
+const stopTImer = document
+  .querySelector('#stop')
+  .addEventListener('click', function (e) {
+    clearInterval(startTimer);
+    timer = 0;
+  });
+```
